@@ -1,6 +1,5 @@
-// BlogItem.js
 import React, { useState } from 'react';
-import './App.css'; // Import the CSS file
+import './App.css'; 
 
 const BlogItem = ({ blog }) => {
   const [showComments, setShowComments] = useState(false);

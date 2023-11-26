@@ -1,7 +1,6 @@
-// BlogList.js
 import React, { useState, useEffect } from 'react';
 import BlogItem from './BlogItem';
-import './App.css'; // Import the CSS file
+import './App.css'; 
 
 const BlogList = () => {
   const [blogs, setBlogs] = useState([]);
