@@ -1,16 +1,14 @@
-/* App.css */
-
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto Slab', serif;
   background-color: #f4f4f4;
-  margin: 10;
-  padding: 10;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 .container {
   max-width: 800px;
-  margin: 10 auto;
+  margin: 0 auto;
   padding: 20px;
 }
 
@@ -19,41 +17,39 @@ body {
 .blog-item {
   background-color: #fff;
   border: 1px solid #ddd;
-  margin: 20px;
+  margin-bottom: 20px;
   padding: 20px;
 }
 
-.blog-item h2 {
-  color: #333;
+.title-author {
+  display: flex;
+  align-items: baseline;
 }
 
-.blog-item p {
+.title {
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+.author {
   color: #666;
 }
 
-/* BlogList.css */
-
-.blog-list {
-  margin: 20px;
+.content {
+  text-align: left;
 }
 
-/* Loading and Error styles */
-
-.loading, .error {
-  background-color: #ffebeb;
-  color: #d8000c;
-  padding: 10px;
-  margin: 10px 0;
+.date {
+  color: #666;
 }
 
-/* Media Query for Responsive Design */
+.comments {
+  color: blue;
+  cursor: pointer;
+}
 
-@media (max-width: 600px) {
-  .container {
-    padding: 10px;
-  }
-
-  .blog-item {
-    padding: 10px;
-  }
+.comment-section {
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
 }

@@ -1,15 +1,32 @@
-import React from 'react';
-import './App.css';
+// BlogItem.js
+import React, { useState } from 'react';
+import './App.css'; // Import the CSS file
 
 const BlogItem = ({ blog }) => {
+  const [showComments, setShowComments] = useState(false);
+
+  const handleCommentsClick = () => {
+    setShowComments(!showComments);
+  };
+
   return (
-    <div>
-      <h2>{blog.title}</h2>
-      <p>Author: {blog.author}</p>
-      <p>Blog: {blog.content}</p>
-      <p>Average Rating: {blog.averageRating}</p>
-      <p>Created at: {blog.creationDate}</p>
-      <p>Comments: <p>{blog.comments}</p></p>
+    <div className="blog-item">
+      <div className="title-author">
+        <h2 className="title">{blog.title}</h2>
+        <p className="author">Author: {blog.author}</p>
+      </div>
+      <p className="content">{blog.content}</p>
+      <p className="date">Created at: {blog.creationDate}</p>
+      <p className="comments" onClick={handleCommentsClick}>
+        Comments: {showComments ? 'Hide Comments' : 'Show Comments'}
+      </p>
+      {showComments && (
+        <div className="comment-section">
+          {blog.comments.map((comment, index) => (
+            <p key={index}>{comment}</p>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
