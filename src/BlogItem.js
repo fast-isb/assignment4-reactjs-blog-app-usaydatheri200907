@@ -1,11 +1,16 @@
+// BlogItem.js
 import React, { useState } from 'react';
-import './App.css'; 
+import './App.css';
 
-const BlogItem = ({ blog }) => {
+const BlogItem = ({ blog, onDelete }) => {
   const [showComments, setShowComments] = useState(false);
 
   const handleCommentsClick = () => {
     setShowComments(!showComments);
+  };
+
+  const handleDeleteClick = () => {
+    onDelete(blog._id);
   };
 
   return (
@@ -19,6 +24,9 @@ const BlogItem = ({ blog }) => {
       <p className="comments" onClick={handleCommentsClick}>
         Comments: {showComments ? 'Hide Comments' : 'Show Comments'}
       </p>
+      <button className="deleteButton" onClick={handleDeleteClick}>
+        Delete
+      </button>
       {showComments && (
         <div className="comment-section">
           {blog.comments.map((comment, index) => (
